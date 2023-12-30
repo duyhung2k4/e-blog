@@ -40,6 +40,14 @@ export default function Home() {
         />
       </div>
 
+      <div style={{
+        minHeight: 100,
+        width: "100%",
+        backgroundColor: "blue"
+      }}>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7716621560312383" crossOrigin="anonymous"></script>
+      </div>
+
       <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
