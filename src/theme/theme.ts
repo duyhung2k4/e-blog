@@ -2,6 +2,7 @@ import { MantineThemeOverride } from "@mantine/core";
 
 const theme: MantineThemeOverride = {
   colorScheme: "light",
+  fontFamily: "'__Lexend_Deca_20018d', '__Lexend_Deca_Fallback_20018d'",
   colors: {
     success: [
       "#b8e5ba",
@@ -192,6 +193,20 @@ const theme: MantineThemeOverride = {
         root: {
           "& .mantine-Input-input": {
             borderRadius: 10,
+            border: 0,
+            backgroundColor: "#224957",
+            color: "#FFF",
+          },
+          "& .mantine-PasswordInput-innerInput": {
+            borderRadius: 10,
+            border: 0,
+            backgroundColor: "#224957",
+            color: "#FFF",
+          },
+          "& .mantine-ActionIcon-root": {
+            ":hover": {
+              backgroundColor: "#224957",
+            }
           }
         }
       },

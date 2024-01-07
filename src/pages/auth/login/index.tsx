@@ -5,6 +5,7 @@ import {
 } from '@react-oauth/google';
 import {
   Button,
+  Divider,
   Group,
   Image,
   Stack,
@@ -58,11 +59,16 @@ const LoginPage: React.FC = () => {
 
         <Stack maw={300} w={"100%"}>
           <Form_Login/>
-          <Button
-            w={"100%"}
-            onClick={() => login()}
-            leftIcon={<Image height={20} src={iconGoogle.src} />}
-          >Đăng nhập với Google</Button>
+
+          <Stack spacing={4} mt={28}>
+            <Button>Đăng nhập</Button>
+            <Divider my="xs" label="Đăng nhập" labelPosition="center" />
+            <Button
+              w={"100%"}
+              onClick={() => login()}
+              leftIcon={<Image height={20} src={iconGoogle.src} />}
+            >Đăng nhập với Google</Button>
+          </Stack>
         </Stack>
       </Stack>
     </Group>

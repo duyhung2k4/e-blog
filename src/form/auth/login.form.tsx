@@ -15,7 +15,7 @@ const Form_Login: React.FC = () => {
         placeholder: "password",
         key: "password",
         xs: 12,
-        typeinput: "textinput",
+        typeinput: "passwordinput",
       }
     ]
     return fields
