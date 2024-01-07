@@ -1,7 +1,6 @@
 import React from "react";
 import CustomTextInput, { CustomTextInputProps } from "../TextInput/TextInput";
 import CustomTextArea, { CustomTextAreaProps } from "../TextArea/TextArea";
-import CustomSelect, { CustomSelectProps } from "../Select/Select";
 import CustomMultiSelect, { CustomMultiSelectProps } from "../MultiSelect/MultiSelect";
 import CustomAutoComplete, { CustomAutoCompleteProps } from "../AutoComplete/AutoComplete";
 import CustomRadio, { CustomRadioProps } from "../Radio/Radio";
@@ -10,16 +9,12 @@ import CustomDatePicker, { CustomDatePickerProps } from "../DatePicker/DatePicke
 import CustomNumberInput, { CustomNumberInputProps } from "../NumberInput/NumberInput";
 import CustomPasswordInput, { CustomPasswordInputProps } from "../PasswordInput/PasswordInput";
 import CustomSwitch, { CustomSwitchProps } from "../Switch/Switch";
-import CustomTableInput, { CustomTableInputProps } from "../TableInput";
 import CustomSelectBase, { CustomSelectBaseProps } from "../SelectBase/SelectBase";
 import CustomUnType, { CustomUnTypeProps } from "../UnType/UnType";
-import CustomFileInput, { CustomFileInputProps } from "../FileInput/FileInput";
-import CustomDropzone, { CustomDropzoneProps } from "../Dropzone";
 
 export type CustomFormFieldType =
   | "textinput"
   | "textarea"
-  | "select"
   | "selectbase"
   | "multiselect"
   | "autocomplete"
@@ -29,9 +24,6 @@ export type CustomFormFieldType =
   | "numberinput"
   | "passwordinput"
   | "switch"
-  | "tableinput"
-  | "fileinput"
-  | "dropzone"
   | "untype";
 
 interface FieldBaseProps {
@@ -43,9 +35,6 @@ interface FieldTextInputProps extends CustomTextInputProps, FieldBaseProps {
 }
 interface FieldTextAreaProps extends CustomTextAreaProps, FieldBaseProps {
   typeinput: "textarea"
-}
-interface FieldSelectProps extends CustomSelectProps, FieldBaseProps {
-  typeinput: "select"
 }
 interface FieldSelectBaseProps extends CustomSelectBaseProps, FieldBaseProps {
   typeinput: "selectbase"
@@ -74,15 +63,6 @@ interface FieldPasswordInputProps extends CustomPasswordInputProps, FieldBasePro
 interface FieldSwitchProps extends CustomSwitchProps, FieldBaseProps {
   typeinput: "switch"
 }
-interface FieldTableInputProps extends CustomTableInputProps, FieldBaseProps {
-  typeinput: "tableinput"
-}
-interface FieldFileInputProps extends CustomFileInputProps, FieldBaseProps {
-  typeinput: "fileinput"
-}
-interface FieldDropzoneProps extends CustomDropzoneProps, FieldBaseProps {
-  typeinput: "dropzone"
-}
 interface FieldUnTypeProps extends CustomUnTypeProps, FieldBaseProps {
   typeinput: "untype"
 }
@@ -91,7 +71,6 @@ interface FieldUnTypeProps extends CustomUnTypeProps, FieldBaseProps {
 export type CustomFormFieldProps =
   | FieldTextInputProps
   | FieldTextAreaProps
-  | FieldSelectProps
   | FieldSelectBaseProps
   | FieldMultiSelectProps
   | FieldAutoCompleteProps
@@ -101,9 +80,6 @@ export type CustomFormFieldProps =
   | FieldNumberInputProps
   | FieldPasswordInputProps
   | FieldSwitchProps
-  | FieldTableInputProps
-  | FieldFileInputProps
-  | FieldDropzoneProps
   | FieldUnTypeProps;
 
 const CustomFormField: React.FC<CustomFormFieldProps> = (props) => {
@@ -119,14 +95,6 @@ const CustomFormField: React.FC<CustomFormFieldProps> = (props) => {
       let { typeinput: _, ...newProps } = props;
       return (
         <CustomTextArea
-          {...newProps}
-        />
-      )
-    }
-    case "select": {
-      let { typeinput: _, ...newProps } = props;
-      return (
-        <CustomSelect
           {...newProps}
         />
       )
@@ -199,30 +167,6 @@ const CustomFormField: React.FC<CustomFormFieldProps> = (props) => {
       let { typeinput: _, ...newProps } = props;
       return (
         <CustomSwitch
-          {...newProps}
-        />
-      )
-    }
-    case "tableinput": {
-      let { typeinput: _, ...newProps } = props;
-      return (
-        <CustomTableInput
-          {...newProps}
-        />
-      )
-    }
-    case "fileinput": {
-      let { typeinput: _, ...newProps } = props;
-      return (
-        <CustomFileInput
-          {...newProps}
-        />
-      )
-    }
-    case "dropzone": {
-      let { typeinput: _, ...newProps } = props;
-      return (
-        <CustomDropzone
           {...newProps}
         />
       )

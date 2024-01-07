@@ -5,7 +5,6 @@ import {
   AutocompleteProps,
   createStyles,
 } from "@mantine/core";
-import { icon } from "@pdt/assets/export";
 
 export type CustomAutoCompleteProps = AutocompleteProps;
 
@@ -28,11 +27,6 @@ const CustomAutoComplete: React.FC<CustomAutoCompleteProps> = (props) => {
       <Autocomplete
         {...props}
         className={classes.root}
-        rightSection={
-          <ActionIcon>
-            <img alt="icon-down" src={icon.down} />
-          </ActionIcon>
-        }
       />
     </React.Fragment>
   );

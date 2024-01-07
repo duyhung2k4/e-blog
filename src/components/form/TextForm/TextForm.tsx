@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import CustomFormField, { CustomFormFieldProps } from "../FormField/FormField";
 import dayjs from "dayjs";
 import CustomUnType from "../UnType/UnType";
-import themeLight from "@pdt/theme.light";
 
 import { Box, Grid, MantineProvider, MantineThemeOverride, createStyles } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import theme from "@/theme/theme";
 
 type TypeForm = "inline" | "default" | "filled" | "table" | "tableFilled";
 type FieldSize = {
@@ -48,9 +48,6 @@ const CustomTextForm: React.FC<CustomTextFormProps> = (props) => {
   const validate: any = {};
 
   props.fields.forEach((field: CustomTextFormFieldProps) => {
-    if (field.typeinput !== "untype" && field.typeinput !== "dropzone") {
-      defaultValue[field.key] = field.defaultValue || undefined;
-    }
     if (field.typeinput !== "untype" && field.validate) {
       validate[field.key] = field.validate;
     }
@@ -125,9 +122,9 @@ const CustomTextForm: React.FC<CustomTextFormProps> = (props) => {
 };
 
 const themeOverrideInline: MantineThemeOverride = {
-  ...themeLight,
+  ...theme,
   components: {
-    ...themeLight.components,
+    ...theme.components,
     InputWrapper: {
       styles: {
         root: {
@@ -163,9 +160,9 @@ const themeOverrideInline: MantineThemeOverride = {
 }
 
 const themeOverrideFilled: MantineThemeOverride = {
-  ...themeLight,
+  ...theme,
   components: {
-    ...themeLight.components,
+    ...theme.components,
     InputWrapper: {
       styles: {
         root: {
@@ -195,9 +192,9 @@ const themeOverrideFilled: MantineThemeOverride = {
 }
 
 const themeOverrideTable: MantineThemeOverride = {
-  ...themeLight,
+  ...theme,
   components: {
-    ...themeLight.components,
+    ...theme.components,
     InputWrapper: {
       styles: {
         root: {
@@ -238,9 +235,9 @@ const themeOverrideTable: MantineThemeOverride = {
 }
 
 const themeOverrideTableFilled: MantineThemeOverride = {
-  ...themeLight,
+  ...theme,
   components: {
-    ...themeLight.components,
+    ...theme.components,
     InputWrapper: {
       styles: {
         root: {
@@ -285,7 +282,7 @@ const themeOverrideTableFilled: MantineThemeOverride = {
 const themeOverride: Record<TypeForm, MantineThemeOverride> = {
   inline: themeOverrideInline,
   filled: themeOverrideFilled,
-  default: themeLight,
+  default: theme,
   table: themeOverrideTable,
   tableFilled: themeOverrideTableFilled,
 }

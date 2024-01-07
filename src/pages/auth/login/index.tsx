@@ -15,6 +15,7 @@ import { getGoogleProfile } from '@/utils/google';
 import loginBg from "@/assets/image/loginBg.jpg";
 import iconGoogle from "@/assets/icon/google.svg";
 import theme from '@/theme/theme';
+import Form_Login from '@/form/auth/login.form';
 
 
 const LoginPage: React.FC = () => {
@@ -53,6 +54,8 @@ const LoginPage: React.FC = () => {
       <Stack align="center">
         <p className={classes.login}>Đăng nhập</p>
         <p className={classes.title}>Chào mừng đến với Esport Blog</p>
+
+        <Form_Login/>
 
         <Stack maw={300} w={"100%"}>
           <Button
