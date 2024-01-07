@@ -55,9 +55,9 @@ const LoginPage: React.FC = () => {
         <p className={classes.login}>Đăng nhập</p>
         <p className={classes.title}>Chào mừng đến với Esport Blog</p>
 
-        <Form_Login/>
 
         <Stack maw={300} w={"100%"}>
+          <Form_Login/>
           <Button
             w={"100%"}
             onClick={() => login()}
